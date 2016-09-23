@@ -22,7 +22,7 @@ type Client struct {
 
 	Works    *WorksService
 	//Episodes *EpisodesService
-	//Records  *RecordsService
+	Records  *RecordsService
 	//Me *MeService
 }
 

@@ -39,7 +39,7 @@ type Record struct {
 
 type RecordList struct {
 	Records []Record `json:"records"`
-	*Pagenation
+	*Pagination
 }
 
 type RecordsListOptions struct {

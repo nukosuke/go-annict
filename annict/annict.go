@@ -20,20 +20,27 @@ type Client struct {
 	BaseURL   *url.URL
 	UserAgent string
 
-	Works    *WorksService
+	Works *WorksService
 	//Episodes *EpisodesService
-	Records  *RecordsService
-	//Me *MeService
+	Records *RecordsService
+	/*
+		Me struct {
+			Statuses *MeStatusesService
+			Records  *MeRecordsService
+			Works    *MeWorksService
+			Programs *MeProgramsService
+		}
+	*/
 }
 
 type service struct {
 	client *Client
 }
 
-type Pagenation struct {
+type Pagination struct {
 	TotalCount int64 `json:"total_count"`
-	NextPage int64 `json:"next_page"`
-	PrevPage int64 `json:"prev_page"`
+	NextPage   int64 `json:"next_page"`
+	PrevPage   int64 `json:"prev_page"`
 }
 
 func addOptions(s string, opt interface{}) (string, error) {
@@ -63,9 +70,11 @@ func NewClient(httpClient *http.Client) *Client {
 	baseURL, _ := url.Parse(defaultBaseURL)
 
 	c := &Client{client: httpClient, BaseURL: baseURL, UserAgent: userAgent}
+
 	c.Works = &WorksService{client: c}
 	//c.Episodes = &EpisodesService{client: c}
-	//c.Records = &RecordsService{client: c}
+	c.Records = &RecordsService{client: c}
+
 	return c
 }
 

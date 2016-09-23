@@ -30,6 +30,12 @@ type service struct {
 	client *Client
 }
 
+type Pagenation struct {
+	TotalCount int64 `json:"total_count"`
+	NextPage int64 `json:"next_page"`
+	PrevPage int64 `json:"prev_page"`
+}
+
 func addOptions(s string, opt interface{}) (string, error) {
 	v := reflect.ValueOf(opt)
 	if v.Kind() == reflect.Ptr && v.IsNil() {

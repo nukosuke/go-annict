@@ -35,15 +35,15 @@ type WorkList struct {
 }
 
 type WorksListOptions struct {
-	Fields            []string
-	FilterIds         []int64
-	FilterSeason      string
-	FilterTitle       string
-	Page              int64
-	PerPage           int64
-	SortId            string
-	SortSeason        string
-	SortWatchersCount string
+	Fields            []string `url:"fields,omitempty"`
+	FilterIds         []int64  `url:"filter_ids,omitempty"`
+	FilterSeason      string   `url:"filter_season,omitempty"`
+	FilterTitle       string   `url:"filter_title,omitempty"`
+	Page              int64    `url:"page,omitempty"`
+	PerPage           int64    `url:"per_page,omitempty"`
+	SortId            string   `url:"sort_id,omitempty"`
+	SortSeason        string   `url:"sort_season,omitempty"`
+	SortWatchersCount string   `url:"sort_watchers_count,omitempty"`
 }
 
 func (s *WorksService) List(opt *WorksListOptions) (*WorkList, *http.Response, error) {

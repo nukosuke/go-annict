@@ -20,9 +20,9 @@ type Client struct {
 	BaseURL   *url.URL
 	UserAgent string
 
-	Works *WorksService
-	//Episodes *EpisodesService
-	Records *RecordsService
+	Works    *WorksService
+	Episodes *EpisodesService
+	Records  *RecordsService
 	/*
 		Me struct {
 			Statuses *MeStatusesService
@@ -72,7 +72,7 @@ func NewClient(httpClient *http.Client) *Client {
 	c := &Client{client: httpClient, BaseURL: baseURL, UserAgent: userAgent}
 
 	c.Works = &WorksService{client: c}
-	//c.Episodes = &EpisodesService{client: c}
+	c.Episodes = &EpisodesService{client: c}
 	c.Records = &RecordsService{client: c}
 
 	return c

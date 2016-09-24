@@ -7,8 +7,8 @@ import (
 type MeWorksService service
 
 type MeWorksListOptions struct {
-	Fields            []string `url:"fields,omitempty"`
-	FilterIds         []int64  `url:"filter_ids,omitempty"`
+	Fields            []string `url:"fields,comma,omitempty"`
+	FilterIds         []int64  `url:"filter_ids,comma,omitempty"`
 	FilterSeason      string   `url:"filter_season,omitempty"`
 	FilterTitle       string   `url:"filter_title,omitempty"`
 	FilterStatus      string   `url:"filter_status,omitempty"`

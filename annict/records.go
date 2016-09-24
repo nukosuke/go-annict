@@ -43,8 +43,8 @@ type RecordList struct {
 }
 
 type RecordsListOptions struct {
-	Fields          []string `url:"fields,omitempty"`
-	FilterIds       []int64  `url:"filter_ids,omitempty"`
+	Fields          []string `url:"fields,comma,omitempty"`
+	FilterIds       []int64  `url:"filter_ids,comma,omitempty"`
 	FilterEpisodeId int64    `url:"filter_episode_id,omitempty"`
 	Page            int64    `url:"page,omitempty"`
 	PerPage         int64    `url:"per_page,omitempty"`

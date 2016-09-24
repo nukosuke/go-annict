@@ -24,14 +24,12 @@ type Client struct {
 	Works          *WorksService
 	Episodes       *EpisodesService
 	Records        *RecordsService
-	/*
-		Me struct {
-			Statuses *MeStatusesService
-			Records  *MeRecordsService
-			Works    *MeWorksService
-			Programs *MeProgramsService
-		}
-	*/
+	Me             struct {
+		//Statuses *MeStatusesService
+		Records *MeRecordsService
+		Works   *MeWorksService
+		//Programs *MeProgramsService
+	}
 }
 
 type service struct {
@@ -76,6 +74,8 @@ func NewClient(httpClient *http.Client) *Client {
 	c.Works = &WorksService{client: c}
 	c.Episodes = &EpisodesService{client: c}
 	c.Records = &RecordsService{client: c}
+	c.Me.Works = &MeWorksService{client: c}
+	c.Me.Records = &MeRecordsService{client: c}
 
 	return c
 }

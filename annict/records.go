@@ -43,6 +43,13 @@ type RecordList struct {
 }
 
 type RecordsListOptions struct {
+	Fields          []string `url:"fields,omitempty"`
+	FilterIds       []int64  `url:"filter_ids,omitempty"`
+	FilterEpisodeId int64    `url:"filter_episode_id,omitempty"`
+	Page            int64    `url:"page,omitempty"`
+	PerPage         int64    `url:"per_page,omitempty"`
+	SortId          string   `url:"sort_id,omitempty"`
+	SortLikesCount  string   `url:"sort_likes_count,omitempty"`
 }
 
 func (s *RecordsService) List(opt *RecordsListOptions) (*RecordList, *http.Response, error) {

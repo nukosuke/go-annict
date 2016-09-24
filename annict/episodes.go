@@ -28,6 +28,13 @@ type EpisodeList struct {
 }
 
 type EpisodesListOptions struct {
+	Fields         []string `url:"fields,omitempty"`
+	FilterIds      []int64  `url:"filter_ids,omitempty"`
+	FilterWorkId   int64    `url:"filter_work_id,omitempty"`
+	Page           int64    `url:"page,omitempty"`
+	PerPage        int64    `url:"per_page,omitempty"`
+	SortId         string   `url:"sort_id,omitempty"`
+	SortSortNumber string   `url:"sort_sort_number,omitempty"`
 }
 
 func (s *EpisodesService) List(opt *EpisodesListOptions) (*EpisodeList, *http.Response, error) {

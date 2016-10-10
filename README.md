@@ -3,3 +3,9 @@
 
 # go-annict
 Annict APIクライアントライブラリ for Go
+
+# LICENSE
+
+Copyright (C) nukosuke.
+
+This software is released under the MIT License, see LICENSE.

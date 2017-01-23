@@ -4,7 +4,13 @@
 # go-annict
 Annict APIクライアントライブラリ for Go
 
-# LICENSE
+## Install
+
+```
+$ go get github.com/nukosuke/go-annict/annict
+```
+
+## LICENSE
 
 Copyright (C) nukosuke.
 
